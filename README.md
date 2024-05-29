@@ -49,16 +49,16 @@ Here's a quick screen recording of the expected result:
 
 **Acceptance Criteria:**
 
-- Create a new component.
+- [x] Create a new component.
   - Don't forget, you can use an NPM script to generate the scaffolding for you! We learn how to do this in the [“Getting Started” video](https://courses.joshwcomeau.com/joy-of-react/project-wordle/04-overview)
-- This component should render a `<form>` tag, including a label and a text input.
-- The text input should be controlled by React state.
-- When the form is submitted:
-  - The entered value should be logged to the console (for now).
-  - The input should be reset to an empty string.
-- **The user's input should be converted to ALL UPPERCASE.** No lower-case letters allowed.
-- The input should have a minimum and maximum length of 5.
-  - **NOTE:** The `minLength` validator is a bit funky; you may wish to use the `pattern` attribute instead. This is discussed in more detail on the [Solution page](https://courses.joshwcomeau.com/joy-of-react/project-wordle/06-solution#an-alternative-to-minlength).
+- [x] This component should render a `<form>` tag, including a label and a text input.
+- [x] The text input should be controlled by React state.
+- [x] When the form is submitted:
+  - [x] The entered value should be logged to the console (for now).
+  - [x] The input should be reset to an empty string.
+- [x] **The user's input should be converted to ALL UPPERCASE.** No lower-case letters allowed.
+- [x] The input should have a minimum and maximum length of 5.
+  - [x] **NOTE:** The `minLength` validator is a bit funky; you may wish to use the `pattern` attribute instead. This is discussed in more detail on the [Solution page](https://courses.joshwcomeau.com/joy-of-react/project-wordle/06-solution#an-alternative-to-minlength).
 
 ## Exercise 2: Keeping track of guesses
 
@@ -81,9 +81,9 @@ And here's an example of the expected DOM structure:
 
 **Acceptance Criteria:**
 
-- A new component should be created, to render previous guesses.
-- When the user submits their guess, that value should be rendered within this new component.
-- There should be no key warnings in the console!
+- [ ] A new component should be created, to render previous guesses.
+- [ ] When the user submits their guess, that value should be rendered within this new component.
+- [ ] There should be no key warnings in the console!
 
 ## Exercise 3: Guess slots
 
@@ -148,11 +148,11 @@ There are two things that should help you tackle this exercise:
 
 **Acceptance Criteria:**
 
-- Create a new `Guess` component. 6 instances should be rendered at all times, no matter how many guesses have been submitted.
-- The `Guess` component should render 5 spans, each with the class of `cell`.
-- Each cell should contain a letter, if the `Guess` instance has been given a value. If not, the cell should be blank.
-- Use the `NUM_OF_GUESSES_ALLOWED` constant, when needed.
-- No `key` warnings in the console.
+- [ ] Create a new `Guess` component. 6 instances should be rendered at all times, no matter how many guesses have been submitted.
+- [ ] The `Guess` component should render 5 spans, each with the class of `cell`.
+- [ ] Each cell should contain a letter, if the `Guess` instance has been given a value. If not, the cell should be blank.
+- [ ] Use the `NUM_OF_GUESSES_ALLOWED` constant, when needed.
+- [ ] No `key` warnings in the console.
 
 ## Exercise 4: Game logic
 
@@ -205,9 +205,9 @@ Your task is to use this function to validate the user's guesses, and apply the 
 
 **Acceptance Criteria:**
 
-- Import the `checkGuess` function from `/src/game-helpers.js`, and use it to validate each of the user's guesses
-- When rendering the letters in the `Guess` component, apply the letter's `status` to the `cell` element.
-- "Empty" guess slots should have the same markup as before: `<span class="cell"></span>`.
+- [ ] Import the `checkGuess` function from `/src/game-helpers.js`, and use it to validate each of the user's guesses
+- [ ] When rendering the letters in the `Guess` component, apply the letter's `status` to the `cell` element.
+- [ ] "Empty" guess slots should have the same markup as before: `<span class="cell"></span>`.
 
 ## Exercise 5: winning and losing
 
@@ -242,10 +242,10 @@ When the game is over, one of these banners should be shown, and the text input 
 
 **Acceptance Criteria:**
 
-- If the user wins the game, a happy banner should be shown.
-- If the user loses the game, a sad banner should be shown
-- When the game is over, the text input should be disabled.
-- It's up to you to decide how to structure the banner! Feel free to create new component(s) if you think it's warranted.
+- [ ] If the user wins the game, a happy banner should be shown.
+- [ ] If the user loses the game, a sad banner should be shown
+- [ ] When the game is over, the text input should be disabled.
+- [ ] It's up to you to decide how to structure the banner! Feel free to create new component(s) if you think it's warranted.
 
 ---
 
@@ -275,14 +275,14 @@ Here's what the keyboard looked like in my implementation:
 
 **Acceptance Criteria:**
 
-- Render 3 rows of letters at the bottom of the screen
-- The colors of each letter should match the colors shown in the game board:
-  - Correct letters should have a green background and white text
-  - Misplaced letters should have a yellow background and white text
-  - Incorrect letters should have a dark gray background and white text
-  - Unused letters should have a light gray background and black text
-- No need to include "Enter" and "Backspace" keys.
-- Don't worry too much about the styling, trying to get the alignment to look exactly like a real keyboard.
+- [ ] Render 3 rows of letters at the bottom of the screen
+- [ ] The colors of each letter should match the colors shown in the game board:
+  - [ ] Correct letters should have a green background and white text
+  - [ ] Misplaced letters should have a yellow background and white text
+  - [ ] Incorrect letters should have a dark gray background and white text
+  - [ ] Unused letters should have a light gray background and black text
+- [ ] No need to include "Enter" and "Backspace" keys.
+- [ ] Don't worry too much about the styling, trying to get the alignment to look exactly like a real keyboard.
 
 ## Restart button
 
@@ -296,5 +296,5 @@ _HINT:_ This will require moving the `answer` into state. You'll want to do the 
 
 **Acceptance Criteria:**
 
-- A "Restart Game" button is shown at the end of the game. You can put this button in the `GameOverBanner`, or wherever else you'd like!
-- Clicking the button should select a new correct word and reset all other state.
+- [ ] A "Restart Game" button is shown at the end of the game. You can put this button in the `GameOverBanner`, or wherever else you'd like!
+- [ ] Clicking the button should select a new correct word and reset all other state.
