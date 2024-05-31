@@ -32,7 +32,10 @@ function Game() {
             {range(0, NUM_OF_GUESSES_ALLOWED).map((rowNum, index) => (
                 <React.Fragment key={index}>
                     {guessList[rowNum] ? (
-                        <Guess guessItem={guessList[rowNum]}/>
+                        <Guess
+                            guessItem={guessList[rowNum]}
+                            answer={answer}
+                        />
                     ) : (
                         <p className="guess">
                             {range(1, 6).map((rowCol) => (

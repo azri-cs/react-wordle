@@ -6,7 +6,6 @@ function GuessInput({ setGuessTerm, handleAddGuess, numOfGuesses }) {
               onSubmit={(event) => {
                   event.preventDefault();
                   if (numOfGuesses > 0) {
-                      console.log(numOfGuesses);
                       const guess = event.target.elements.guess_input.value;
                       const uppercaseGuess = guess.toUpperCase();
 

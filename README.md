@@ -205,9 +205,9 @@ Your task is to use this function to validate the user's guesses, and apply the 
 
 **Acceptance Criteria:**
 
-- [ ] Import the `checkGuess` function from `/src/game-helpers.js`, and use it to validate each of the user's guesses
-- [ ] When rendering the letters in the `Guess` component, apply the letter's `status` to the `cell` element.
-- [ ] "Empty" guess slots should have the same markup as before: `<span class="cell"></span>`.
+- [x] Import the `checkGuess` function from `/src/game-helpers.js`, and use it to validate each of the user's guesses
+- [x] When rendering the letters in the `Guess` component, apply the letter's `status` to the `cell` element.
+- [x] "Empty" guess slots should have the same markup as before: `<span class="cell"></span>`.
 
 ## Exercise 5: winning and losing
 
