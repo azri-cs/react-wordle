@@ -1,24 +1,24 @@
 import React from 'react';
 
-import {sample} from '../../utils';
-import {WORDS} from '../../data';
-
-function GuessInput({ setGuessTerm, handleAddGuess }) {
+function GuessInput({ setGuessTerm, handleAddGuess, numOfGuesses }) {
     return <>
         <form id="guess-input-form" className="guess-input-wrapper"
               onSubmit={(event) => {
                   event.preventDefault();
-                  const guess = event.target.elements.guess_input.value;
+                  if (numOfGuesses > 0) {
+                      const guess = event.target.elements.guess_input.value;
 
-                  event.target.elements.guess_input.value = '';
-                  console.info({guess});
+                      event.target.elements.guess_input.value = '';
 
-                  handleAddGuess(guess);
-                  setGuessTerm(guess.toUpperCase());
+                      handleAddGuess(guess);
+                      setGuessTerm(guess.toUpperCase());
+                  } else {
+                      alert('Your number of guesses exceed 6 times');
+                  }
               }}>
             <label htmlFor="guess-input">Enter guess:</label>
             <input id="guess-input" type="text" name="guess_input"
-                   pattern=".{5,}" title="5 characters required"
+                   pattern=".{5,5}" title="5 characters required"
             />
         </form>
     </>;
