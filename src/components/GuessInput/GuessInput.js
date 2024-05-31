@@ -6,14 +6,16 @@ function GuessInput({ setGuessTerm, handleAddGuess, numOfGuesses }) {
               onSubmit={(event) => {
                   event.preventDefault();
                   if (numOfGuesses > 0) {
+                      console.log(numOfGuesses);
                       const guess = event.target.elements.guess_input.value;
+                      const uppercaseGuess = guess.toUpperCase();
 
                       event.target.elements.guess_input.value = '';
 
-                      handleAddGuess(guess);
-                      setGuessTerm(guess.toUpperCase());
+                      handleAddGuess(uppercaseGuess);
+                      setGuessTerm(uppercaseGuess);
                   } else {
-                      alert('Your number of guesses exceed 6 times');
+                      alert('You can only guess 6 times. You have lost!');
                   }
               }}>
             <label htmlFor="guess-input">Enter guess:</label>

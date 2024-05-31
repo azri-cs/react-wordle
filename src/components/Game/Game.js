@@ -24,6 +24,7 @@ function Game() {
         };
         const newGuesses = [...guessList, newGuess];
         setGuessList(newGuesses);
+        setNumOfGuesses(numOfGuesses-1);
     }
 
     return <>
