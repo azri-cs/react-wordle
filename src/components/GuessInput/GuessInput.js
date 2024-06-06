@@ -1,11 +1,12 @@
 import React from 'react';
+import {NUM_OF_GUESSES_ALLOWED} from "../../constants";
 
-function GuessInput({ setGuessTerm, handleAddGuess, numOfGuesses }) {
+function GuessInput({ setGuessTerm, handleAddGuess, numOfGuesses, checkCorrectGuess }) {
     return <>
         <form id="guess-input-form" className="guess-input-wrapper"
               onSubmit={(event) => {
                   event.preventDefault();
-                  if (numOfGuesses > 0) {
+                  if (numOfGuesses < NUM_OF_GUESSES_ALLOWED) {
                       const guess = event.target.elements.guess_input.value;
                       const uppercaseGuess = guess.toUpperCase();
 
@@ -13,6 +14,7 @@ function GuessInput({ setGuessTerm, handleAddGuess, numOfGuesses }) {
 
                       handleAddGuess(uppercaseGuess);
                       setGuessTerm(uppercaseGuess);
+                      checkCorrectGuess(uppercaseGuess);
                   } else {
                       alert('You can only guess 6 times. You have lost!');
                   }

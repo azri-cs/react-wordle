@@ -242,9 +242,9 @@ When the game is over, one of these banners should be shown, and the text input 
 
 **Acceptance Criteria:**
 
-- [ ] If the user wins the game, a happy banner should be shown.
-- [ ] If the user loses the game, a sad banner should be shown
-- [ ] When the game is over, the text input should be disabled.
+- [x] If the user wins the game, a happy banner should be shown.
+- [x] If the user loses the game, a sad banner should be shown
+- [x] When the game is over, the text input should be disabled.
 - [ ] It's up to you to decide how to structure the banner! Feel free to create new component(s) if you think it's warranted.
 
 ---

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {range, sample} from '../../utils';
+import { checkGuess } from "../../game-helpers";
 import {WORDS} from '../../data';
 import GuessInput from "../GuessInput";
-import GuessList from "../GuessList";
 import {NUM_OF_GUESSES_ALLOWED} from "../../constants";
 import Guess from "../Guess";
 
@@ -15,7 +15,9 @@ console.info({answer});
 function Game() {
     const [guessTerm, setGuessTerm] = React.useState('');
     const [guessList, setGuessList] = React.useState([]);
-    const [numOfGuesses, setNumOfGuesses] = React.useState(NUM_OF_GUESSES_ALLOWED);
+    const [numOfGuesses, setNumOfGuesses] = React.useState(0);
+    const [gameWon, setGameWon] = React.useState(false);
+    console.log({gameWon});console.log({guessTerm});
 
     function handleAddGuess(label){
         const newGuess = {
@@ -24,7 +26,11 @@ function Game() {
         };
         const newGuesses = [...guessList, newGuess];
         setGuessList(newGuesses);
-        setNumOfGuesses(numOfGuesses-1);
+        setNumOfGuesses(numOfGuesses+1);
+    }
+
+    function checkCorrectGuess(uppercaseGuess) {
+        setGameWon(uppercaseGuess === answer);
     }
 
     return <>
@@ -46,11 +52,20 @@ function Game() {
                 </React.Fragment>
             ))}
         </div>
-        <GuessInput
+        { gameWon ? (
+            <div className="happy banner">
+                <p>
+                    <strong>Congratulations!</strong> Got it in
+                    <strong> {numOfGuesses} guesses</strong>.
+                </p>
+            </div>
+        ) : <GuessInput
             setGuessTerm={setGuessTerm}
             handleAddGuess={handleAddGuess}
             numOfGuesses={numOfGuesses}
+            checkCorrectGuess={checkCorrectGuess}
         />
+        }
     </>;
 }
 
